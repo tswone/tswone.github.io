@@ -1,17 +1,179 @@
-<body style="
-    background: #222;
-"><pre style="
-    text-align: center;
-    margin: 6em 0;
-    color: aliceblue;
-">
-     ____   ____.__.__  .__         _________                                    __    _________        .__  .__                 __  .__              
-  ___\   \ /   /|__|  | |  |   ____ \_   ___ \  ____   ____   ____  ____________/  |_  \_   ___ \  ____ |  | |  |   ____   _____/  |_|__|__  __ ____  
-_/ ___\   Y   / |  |  | |  | _/ __ \/    \  \/ /  _ \ /    \_/ ___\/ __ \_  __ \   __\ /    \  \/ /  _ \|  | |  | _/ __ \_/ ___\   __\  \  \/ // __ \ 
-\  \___\     /  |  |  |_|  |_\  ___/\     \___(  <_> )   |  \  \__\  ___/|  | \/|  |   \     \___(  <_> )  |_|  |_\  ___/\  \___|  | |  |\   /\  ___/ 
- \___  >\___/   |__|____/____/\___  >\______  /\____/|___|  /\___  >___  >__|   |__|    \______  /\____/|____/____/\___  >\___  >__| |__| \_/  \___  >
-     \/                           \/        \/            \/     \/    \/                      \/                      \/     \/                   \/ 
-</pre>
-<p style="text-align: center;">Charlottesville Concert Collective • 2026</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cville Concert Collective</title>
+    <style>
+        :root {
+            --primary-blue: #6699ff; /* Matches your blue banner */
+            --bg-dark: #000000;
+            --text-light: #ffffff;
+            --accent-gold: #f4d03f;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('image_82d0b9.png');
+            background-size: cover;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .logo {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding: 30px;
+            border-radius: 12px;
+            background: #111;
+            border: 1px solid #333;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--primary-blue);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Event Block Styles */
+        .event-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .event-detail {
+            margin-bottom: 15px;
+        }
+
+        .event-detail strong {
+            color: var(--primary-blue);
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Button */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.2s, background-color 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #5588ee;
+            transform: scale(1.05);
+        }
+
+        /* Mission & Footer */
+        .mission-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #0a0a0a;
+            font-size: 0.9rem;
+        }
+
+        .social-links a {
+            color: var(--primary-blue);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .event-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Abi CCC logo final rgb black.png" alt="Cville Concert Collective Logo" class="logo">
+        <h1>Cville Concert Collective</h1>
+    </header>
+
+    <div class="container">
+        
+        <section class="section">
+            <h2>Our Mission</h2>
+            <p class="mission-text">
+                "Our mission is to connect teen musicians by giving them a platform to perform while also raising money to support music education in the Charlottesville community." 
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Upcoming Event</h2>
+            <div class="event-grid">
+                <div class="event-detail">
+                    <strong>WHAT:</strong>
+                    A fun opportunity to perform for peers and connect with other young musicians. [cite: 4, 5, 6]
+                </div>
+                <div class="event-detail">
+                    <strong>WHEN:</strong>
+                    Sunday, May 31, 2026 [cite: 8, 9]
+                </div>
+                <div class="event-detail">
+                    <strong>WHERE:</strong>
+                    1304 E Market St, Charlottesville, VA 22902 [cite: 10, 11]
+                </div>
+                <div class="event-detail">
+                    <strong>WHY:</strong>
+                    All proceeds go to the Music Resource Center to support music education. [cite: 13, 17]
+                </div>
+            </div>
+            
+            <a href="#" class="btn">Fill Out the Interest Form</a> 
+        </section>
+
+        <section class="section" style="text-align: center;">
+            <h2>Get In Touch</h2>
+            <p>Questions? Reach out to us directly:</p>
+            <p><strong>Email:</strong> <a href="mailto:connect@cvilleconcertcollective.com" style="color: var(--primary-blue);">connect@cvilleconcertcollective.com</a></p>
+            <div class="social-links">
+                <a href="https://instagram.com/cvilleconcertcollective" target="_blank">Instagram: @cvilleconcertcollective</a> [cite: 16]
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Cville Concert Collective. Charlottesville, VA.</p>
+        <p><small>Building community through music.</small></p>
+    </footer>
 
 </body>
+</html>
