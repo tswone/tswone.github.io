@@ -7,119 +7,150 @@
     <style>
         :root {
             --primary-blue: #6699ff;
+            --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             --text-dark: #222222;
             --bg-light: #ffffff;
             --gray-bg: #f9f9f9;
         }
 
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Full Bleed Header */
         header {
             width: 100%;
-            height: 300px;
-            background: blue;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo {
-            height: 180px;
-            background: url('hdr.png') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #6aa1fe;
         }
 
-        .header-overlay-text {
-            display: none; /* Hide text if the logo contains the name */
+        .logo {
+            height: clamp(100px, 15vh, 150px);
+            background: url(hdr.png) no-repeat center center;
+            background-size: contain;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
         .section {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--text-dark);
             border-bottom: 4px solid var(--primary-blue);
             display: inline-block;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Mission Statement Style */
         .mission-box {
-            font-size: 1.4rem;
-            line-height: 1.4;
-            color: #444;
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
+            line-height: 1.5;
+            color: #333;
             padding: 20px 0;
             border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
+        }
+
+        /* Attractive Instagram Link */
+        .insta-cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .insta-cta:hover {
+            border-color: #bc1888;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .insta-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--insta-gradient);
+            border-radius: 6px;
+            margin-right: 12px;
+            display: inline-block;
         }
 
         /* Event Card */
         .event-card {
             background-color: var(--gray-bg);
-            padding: 40px;
-            border-radius: 8px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: 1px solid #eee;
         }
 
         .event-info h3 {
             margin-top: 0;
             color: var(--primary-blue);
+            font-size: 1.4rem;
         }
 
         .event-grid {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .event-grid li {
             margin-bottom: 15px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         .event-grid strong {
             display: block;
-            font-size: 0.8rem;
-            color: #777;
+            font-size: 0.75rem;
+            color: #666;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* Buttons */
         .btn {
-            display: inline-block;
+            display: block;
             background-color: var(--primary-blue);
             color: white;
-            padding: 18px 35px;
+            padding: 16px 20px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 8px;
             font-weight: bold;
             font-size: 1.1rem;
-            transition: opacity 0.2s;
+            text-align: center;
+            transition: background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(106, 161, 254, 0.2);
         }
 
         .btn:hover {
-            opacity: 0.9;
+            background-color: #5588ee;
+        }
+
+        .link-text {
+            color: var(--primary-blue);
+            text-decoration: underline;
+            font-weight: bold;
         }
 
         footer {
@@ -127,62 +158,64 @@
             padding: 40px 20px;
             text-align: center;
             font-size: 0.9rem;
+            color: #666;
         }
 
-        .contact-link {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            header { height: 200px; }
-            .event-card { grid-template-columns: 1fr; }
+        @media (min-width: 600px) {
+            .event-card { flex-direction: row; padding: 40px; }
+            .event-info { flex: 1; }
+            .event-grid { flex: 1; border-left: 1px solid #ddd; padding-left: 30px; }
+            .btn { display: inline-block; }
+            .container { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"></div>
-        </header>
+        <div class="logo" role="img" aria-label="Cville Concert Collective Logo"></div>
+    </header>
 
-    <div class="container">
+    <main class="container">
         
         <section class="section">
             <h2>Our Mission</h2>
             <div class="mission-box">
                 Our mission is to connect teen musicians by giving them a platform to perform while also raising money to support music education in the Charlottesville community.
             </div>
+            <a href="https://instagram.com/cvilleconcertcollective" target="_blank" rel="noopener" class="insta-cta">
+                <span class="insta-icon"></span>
+                Follow us @cvilleconcertcollective
+            </a>
         </section>
 
         <section class="section">
-            <h2>The Next Event</h2>
+            <h2>Upcoming Event</h2>
             <div class="event-card">
                 <div class="event-info">
                     <h3>Community Concert</h3>
-                    <p>A fun opportunity to perform music for your peers and a chance to connect with other young musicians[cite: 1].</p>
-                    <a href="#" class="btn">Fill Out Interest Form</a>
+                    <p>A fun opportunity to perform music for your peers and connect with other young musicians.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCaRIs5exojNah3UB5ilkaVG2CCz_NylBXdk1nqm-4zcPtwg/viewform" class="btn" target="_blank" rel="noopener">Interest Form</a>
                 </div>
                 <ul class="event-grid">
-                    <li><strong>When</strong> Sunday May 31, 2026 [cite: 1]</li>
-                    <li><strong>Where</strong> 1304 E Market St, Charlottesville, VA 22902 [cite: 1]</li>
-                    <li><strong>Support</strong> All proceeds go to the Music Resource Center[cite: 1].</li>
+                    <li><strong>When</strong> Sunday May 31, 2026</li>
+                    <li><strong>Where</strong> 1304 E Market St, Charlottesville, VA 22902</li>
+                    <li><strong>Support</strong> All proceeds go to the <a href="https://musicresourcecenter.org/" target="_blank" rel="noopener" class="link-text">Music Resource Center</a>.</li>
                 </ul>
             </div>
         </section>
 
-        <section class="section" style="border-top: 1px solid #eee; padding-top: 40px;">
+        <section class="section" style="border-top: 1px solid #eee; padding-top: 30px;">
             <h2>Connect</h2>
-            <p>For inquiries, please email: <a href="mailto:connect@cvilleconcertcollective.com" class="contact-link">connect@cvilleconcertcollective.com</a></p>
-            <p>Follow us on Instagram: <a href="https://instagram.com/cvilleconcertcollective" class="contact-link" target="_blank">@cvilleconcertcollective [cite: 1]</a></p>
+            <p><strong>Email:</strong> <a href="mailto:connect@cvilleconcertcollective.com" class="link-text">connect@cvilleconcertcollective.com</a></p>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/cvilleconcertcollective" class="link-text" target="_blank" rel="noopener">@cvilleconcertcollective</a></p>
         </section>
 
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Cville Concert Collective [cite: 1]</p>
-        <p>CvilleConcertCollective.com [cite: 1]</p>
+        <p>&copy; 2026 Cville Concert Collective</p>
+        <p>CvilleConcertCollective.com</p>
     </footer>
 
 </body>
