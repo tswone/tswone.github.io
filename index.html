@@ -110,6 +110,42 @@
             font-size: 1.4rem;
         }
 
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 14px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(106, 161, 254, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #5588ee;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(106, 161, 254, 0.1);
+        }
+
         .event-grid {
             list-style: none;
             padding: 0;
@@ -127,24 +163,6 @@
             color: #666;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-
-        .btn {
-            display: block;
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 16px 20px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-align: center;
-            transition: background-color 0.2s;
-            box-shadow: 0 4px 6px rgba(106, 161, 254, 0.2);
-        }
-
-        .btn:hover {
-            background-color: #5588ee;
         }
 
         .link-text {
@@ -165,7 +183,6 @@
             .event-card { flex-direction: row; padding: 40px; }
             .event-info { flex: 1; }
             .event-grid { flex: 1; border-left: 1px solid #ddd; padding-left: 30px; }
-            .btn { display: inline-block; }
             .container { padding: 40px 20px; }
         }
     </style>
@@ -195,7 +212,10 @@
                 <div class="event-info">
                     <h3>Community Concert</h3>
                     <p>A fun opportunity to perform music for your peers and connect with other young musicians.</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCaRIs5exojNah3UB5ilkaVG2CCz_NylBXdk1nqm-4zcPtwg/viewform" class="btn" target="_blank" rel="noopener">Interest Form</a>
+                    <div class="button-group">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCaRIs5exojNah3UB5ilkaVG2CCz_NylBXdk1nqm-4zcPtwg/viewform" class="btn" target="_blank" rel="noopener">Sign up now!</a>
+                        <a href="flyer.pdf" class="btn btn-secondary" target="_blank" rel="noopener">View Flyer (PDF)</a>
+                    </div>
                 </div>
                 <ul class="event-grid">
                     <li><strong>When</strong> Sunday May 31, 2026</li>
