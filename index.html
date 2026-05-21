@@ -36,7 +36,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
         }
@@ -93,21 +93,38 @@
             display: inline-block;
         }
 
-        /* Event Card */
-        .event-card {
+        /* Layout structure for Event with Image */
+        .event-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
             background-color: var(--gray-bg);
-            padding: 25px;
+            padding: 20px;
             border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .event-flyer {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            align-self: center;
+        }
+
+        .event-card {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            border: 1px solid #eee;
+            width: 100%;
         }
 
         .event-info h3 {
             margin-top: 0;
             color: var(--primary-blue);
-            font-size: 1.4rem;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
         }
 
         .button-group {
@@ -171,6 +188,11 @@
             font-weight: bold;
         }
 
+        .performer-list {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+        }
+
         footer {
             background: #f1f1f1;
             padding: 40px 20px;
@@ -179,10 +201,10 @@
             color: #666;
         }
 
-        @media (min-width: 600px) {
-            .event-card { flex-direction: row; padding: 40px; }
-            .event-info { flex: 1; }
-            .event-grid { flex: 1; border-left: 1px solid #ddd; padding-left: 30px; }
+        @media (min-width: 768px) {
+            .event-container { flex-direction: row; padding: 30px; align-items: flex-start; }
+            .event-flyer { width: 40%; max-width: 320px; }
+            .event-card { flex-direction: column; width: 60%; gap: 15px; }
             .container { padding: 40px 20px; }
         }
     </style>
@@ -208,20 +230,42 @@
 
         <section class="section">
             <h2>Upcoming Event</h2>
-            <div class="event-card">
-                <div class="event-info">
-                    <h3>Community Concert</h3>
-                    <p>A fun opportunity to perform music for your peers and connect with other young musicians.</p>
-                    <div class="button-group">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCaRIs5exojNah3UB5ilkaVG2CCz_NylBXdk1nqm-4zcPtwg/viewform" class="btn" target="_blank" rel="noopener">Sign up now!</a>
-                        <a href="flyer.pdf" class="btn btn-secondary" target="_blank" rel="noopener">View Flyer (PDF)</a>
+            <div class="event-container">
+                <img src="SchoolsOutConcert_May31,2026_Fin.jpg" alt="School's Out Concert Flyer" class="event-flyer">
+                
+                <div class="event-card">
+                    <div class="event-info">
+                        <h3>School's Out Concert</h3>
+                        <p>Celebrate the end of the school year with live music from fantastic local talent! All donations directly assist local music education initiatives.</p>
                     </div>
+                    <ul class="event-grid">
+                        <li><strong>When</strong> Sunday, May 31, 2026 <br> 2:00 PM – 4:00 PM</li>
+                        <li><strong>Where</strong> Malleable Studios <br> 1304 E Market St, Charlottesville, VA</li>
+                        <li><strong>Admission</strong> $5.00 Suggested Donation</li>
+                        <li>
+                            <strong>Performers</strong>
+                            <ul class="performer-list">
+                                <li>Attagirl</li>
+                                <li>Elisa Reyes</li>
+                                <li>Nitrogen Bass</li>
+                                <li>Abi Bristol</li>
+                            </ul>
+                        </li>
+                        <li><strong>Support</strong> All proceeds go to the <a href="https://musicresourcecenter.org/" target="_blank" rel="noopener" class="link-text">Music Resource Center</a>.</li>
+                    </ul>
                 </div>
-                <ul class="event-grid">
-                    <li><strong>When</strong> Sunday May 31, 2026</li>
-                    <li><strong>Where</strong> 1304 E Market St, Charlottesville, VA 22902</li>
-                    <li><strong>Support</strong> All proceeds go to the <a href="https://musicresourcecenter.org/" target="_blank" rel="noopener" class="link-text">Music Resource Center</a>.</li>
-                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Interested in Performing?</h2>
+            <div style="background-color: var(--gray-bg); padding: 25px; border-radius: 12px; border: 1px solid #eee;">
+                <p>Are you a teen musician or part of a local youth band? The Cville Concert Collective is a fun opportunity to perform music for your peers and connect with other young musicians.</p>
+                <p>We are always looking for vibrant new acts to join our future lineups and showcase their talent.</p>
+                <div class="button-group">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCaRIs5exojNah3UB5ilkaVG2CCz_NylBXdk1nqm-4zcPtwg/viewform" class="btn" target="_blank" rel="noopener">Sign up now!</a>
+                    <a href="flyer.pdf" class="btn btn-secondary" target="_blank" rel="noopener">View Flyer (PDF)</a>
+                </div>
             </div>
         </section>
 
